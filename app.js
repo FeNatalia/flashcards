@@ -2,8 +2,19 @@ const express = require("express");
 
 const app = express();
 
+app.set("view engine", "pug");
+
 app.get("/", (request, response) => {
-  response.send("Welcome");
+  response.render("index");
 });
 
-app.listen(3000);
+app.get("/cards", (request, response) => {
+  response.render("card", {
+    prompt: "What is the capital of Sweden?",
+    hint: "There is a syndrome called after the city",
+  });
+});
+
+app.listen(3000, () => {
+  console.log("The app is running on port 3000");
+});
