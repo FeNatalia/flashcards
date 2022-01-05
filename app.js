@@ -11,7 +11,6 @@ app.get("/", (request, response) => {
 app.get("/cards", (request, response) => {
   response.render("card", {
     prompt: "What is the capital of Sweden?",
-    hint: "There is a syndrome called after the city",
   });
 });
 
