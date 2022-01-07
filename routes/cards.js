@@ -18,12 +18,13 @@ router.get("/:id", (request, response) => {
     response.redirect(`/cards/${id}?side=question`);
   }
 
+  const name = request.cookies.username;
   const text = cards[id][side];
   const { hint } = cards[id];
   // instead of:
   // prompt: cards[request.params.id].question,
   // hint: cards[request.params.id].hint
-  const templateData = { id, text };
+  const templateData = { id, text, name };
 
   if (side === "question") {
     templateData.hint = hint;
