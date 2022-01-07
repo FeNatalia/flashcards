@@ -45,6 +45,18 @@ app.post("/goodbye", (request, response) => {
   response.redirect("/hello");
 });
 
+app.use((request, response, next) => {
+  const err = new Error("Not Found");
+  err.status = 404;
+  next(err);
+});
+
+app.use((err, request, response, next) => {
+  response.locals.error = err;
+  response.status(err.status);
+  response.render("error");
+});
+
 app.listen(3000, () => {
   console.log("The app is running on port 3000");
 });
