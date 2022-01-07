@@ -10,40 +10,10 @@ app.use(cookieParser());
 
 app.set("view engine", "pug");
 
-app.get("/", (request, response) => {
-  const name = request.cookies.username;
-  if (name) {
-    response.render("index", { name });
-  } else {
-    response.redirect("/hello");
-  }
-});
-
-app.get("/cards", (request, response) => {
-  response.render("card", {
-    prompt: "What is the capital of Sweden?",
-  });
-});
-
-app.get("/hello", (request, response) => {
-  const name = request.cookies.username;
-  if (name) {
-    response.redirect("/");
-  } else {
-    response.render("hello");
-  }
-});
-
-app.post("/hello", (request, response) => {
-  response.cookie("username", request.body.username);
-  response.redirect("/");
-  //response.json(request.body);
-});
-
-app.post("/goodbye", (request, response) => {
-  response.clearCookie("username");
-  response.redirect("/hello");
-});
+const mainRoutes = require("./routes");
+const cardRoutes = require("./routes/cards");
+app.use(mainRoutes);
+app.use("/cards", cardRoutes);
 
 app.use((request, response, next) => {
   const err = new Error("Not Found");
