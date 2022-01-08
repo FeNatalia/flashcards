@@ -1,0 +1,116 @@
+/* Flash Card Styles */
+
+body {
+    position: relative;
+  }
+  
+  header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #D64226;
+    font-size: 14px;
+  }
+  
+  header img {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  body {
+    background-color: #EDEAD9;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  h2 {
+    font-weight: 400;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  button {
+    outline: none;
+  }
+  
+  input {
+    width: 50%;
+    height: 30px;
+    font-size: 1em;
+    text-align: center;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+    color: #34393D;
+  }
+
+
+/* Buttons */
+.button-primary-small {
+    margin-top: 50px;
+    background-color: #fff;
+    border: 2px #D64226 solid;
+    font-size: 1em;
+    padding: 8px 10px;
+    color: #D64226;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  }
+  
+  .button-primary-small:hover {
+    background-color: #D64226;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  /* Flash Cards */
+.flashcards {
+    position: absolute;
+    top: 240px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+  
+  .card {
+    position: relative;
+    max-width: 400px;
+    min-height: 425px;
+    box-sizing: border-box;
+    margin: auto;
+    padding-bottom: 30px;
+    color: #727C85;
+    text-align: center;
+    border-radius: 20px;
+    line-height: 1.5;
+    border-bottom: 4px solid rgba(0,0,0,.1);
+  }
+  
+  .card-header {
+    background-color: #727C85;
+    height: 100px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .card-title {
+    text-align: center;
+    border-top: 2px solid #F5F3ED;
+    border-bottom: 2px solid rgba(0,0,0,.05);
+    color: #727C85;
+    padding: 10px;
+    letter-spacing: 5px;
+    background-color: #F5F3ED;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
